@@ -300,7 +300,7 @@ MonoBehaviour:
   uw: 4
   uh: 4
   wallPrefab: {fileID: 2539433867066550706, guid: 31dc9dab3c6227840b561ba8cffef4b5, type: 3}
-  startPrefab: {fileID: 2094349574502130498, guid: 5d54d98700e9554469b577c0d236e62d, type: 3}
+  startPrefab: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7, type: 3}
   endPrefab: {fileID: 2141708213964353857, guid: 942f24dab8af6754ebc26446c094d0c6, type: 3}
   objPrefabs: []
   objDensity: 10
