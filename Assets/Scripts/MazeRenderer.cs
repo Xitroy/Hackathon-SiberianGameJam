@@ -25,6 +25,9 @@ public class MazeRenderer : MonoBehaviour
   private Transform startPrefab = null;
 
   [SerializeField]
+  private Transform crownPrefab = null;
+
+  [SerializeField]
   private Transform endPrefab = null;
 
   [SerializeField]
@@ -51,7 +54,7 @@ public class MazeRenderer : MonoBehaviour
   {
     var maze = new CellHive(w, h, uw, uh);
     DrawWalls(maze, wallPrefab, cluePrefab, clueDensity);
-    DrawKeys(maze, startPrefab, endPrefab);
+    DrawKeys(maze, startPrefab, crownPrefab, endPrefab);
     DrawObjects(maze, objPrefabs);
     DrawTop(maze, glassPrefabs);
   }
@@ -125,10 +128,12 @@ public class MazeRenderer : MonoBehaviour
     }
   }
 
-  public void DrawKeys(CellHive maze, Transform startPrefab, Transform endPrefab)
+  public void DrawKeys(CellHive maze, Transform startPrefab, Transform crownPrefab, Transform endPrefab)
   {
     var start = Instantiate(startPrefab, transform) as Transform;
     start.position = maze.GetStart().Position;
+    var crown = Instantiate(crownPrefab, transform) as Transform;
+    crown.position = maze.GetStart().Position + new Vector3(0, 2, 0);
     var end = Instantiate(endPrefab, transform) as Transform;
     end.position = maze.GetEnd().Position + new Vector3(0, 2, 0);
   }
