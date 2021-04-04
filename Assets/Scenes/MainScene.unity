@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2500419468346418745, guid: 01889d7da006e914faf0376e2abb4b42, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2500419468346418746, guid: 01889d7da006e914faf0376e2abb4b42, type: 3}
       propertyPath: m_Pivot.x
       value: 0

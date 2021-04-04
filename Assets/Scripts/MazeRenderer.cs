@@ -53,6 +53,9 @@ public class MazeRenderer : MonoBehaviour
   void Start()
   {
     var maze = new CellHive(w, h, uw, uh);
+
+
+
     DrawWalls(maze, wallPrefab, cluePrefab, clueDensity);
     DrawKeys(maze, startPrefab, crownPrefab, endPrefab);
     DrawObjects(maze, objPrefabs);
@@ -67,7 +70,7 @@ public class MazeRenderer : MonoBehaviour
     {
       var i = rng.Next(0, glassPrefabs.Count);
       var glassT = Instantiate(glassPrefabs[i], transform) as Transform;
-      glassT.position = cell.Position + new Vector3(0, 4, 0);
+      glassT.position = cell.Position + new Vector3(0, 5, 0);
       glassT.localScale = new Vector3(uw, 0, uh);
     }
   }
@@ -131,11 +134,18 @@ public class MazeRenderer : MonoBehaviour
   public void DrawKeys(CellHive maze, Transform startPrefab, Transform crownPrefab, Transform endPrefab)
   {
     var start = Instantiate(startPrefab, transform) as Transform;
-    start.position = maze.GetStart().Position;
+    var startCell = maze.GetRandomCell();
+    startCell.MarkAsStart();
+    start.position = startCell.Position;
+
     var crown = Instantiate(crownPrefab, transform) as Transform;
-    crown.position = maze.GetStart().Position + new Vector3(0, 2, 0);
+    var crownCell = maze.GetRandomCell();
+    crown.position = crownCell.Position;
+
     var end = Instantiate(endPrefab, transform) as Transform;
-    end.position = maze.GetEnd().Position + new Vector3(0, 2, 0);
+    var endCell = maze.GetRandomCell();
+    endCell.MarkAsEnd();
+    end.position = endCell.Position;
   }
 
   // Update is called once per frame
