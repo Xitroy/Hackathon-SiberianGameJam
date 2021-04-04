@@ -12,13 +12,12 @@ public class GameRules : MonoBehaviour
     private Transform player;
     void Start()
     {
-        exit = GameObject.FindGameObjectsWithTag("Finish")[0].transform;
-        print(exit);
+        // exit = GameObject.FindWithTag("Crown").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // print(GameObject.FindWithTag("Crown"));
     }
 }
