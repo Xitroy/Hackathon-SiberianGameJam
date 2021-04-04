@@ -2,13 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test
-{
-  public int i = 42;
-  public Test()
-  {
-  }
-}
 public class MazeRenderer : MonoBehaviour
 {
   [SerializeField]
@@ -48,6 +41,9 @@ public class MazeRenderer : MonoBehaviour
   [Range(1, 10)]
   private int clueDensity = 3;
 
+  [SerializeField]
+  private List<Transform> glassPrefabs = null;
+
   private int DrawCycle = 0;
 
   // Start is called before the first frame update
@@ -57,6 +53,20 @@ public class MazeRenderer : MonoBehaviour
     DrawWalls(maze, wallPrefab, cluePrefab, clueDensity);
     DrawKeys(maze, startPrefab, endPrefab);
     DrawObjects(maze, objPrefabs);
+    DrawTop(maze, glassPrefabs);
+  }
+
+  public void DrawTop(CellHive maze, List<Transform> glassPrefabs)
+  {
+    var rng = new System.Random();
+
+    foreach (Cell cell in maze.Cells)
+    {
+      var i = rng.Next(0, glassPrefabs.Count);
+      var glassT = Instantiate(glassPrefabs[i], transform) as Transform;
+      glassT.position = cell.Position + new Vector3(0, 4, 0);
+      glassT.localScale = new Vector3(uw, 0, uh);
+    }
   }
 
   public void DrawObjects(CellHive maze, List<Transform> objPrefabs)
