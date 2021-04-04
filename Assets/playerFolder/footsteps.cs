@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class footsteps : MonoBehaviour
+public class Footsteps : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool stepsOnWater = false;
