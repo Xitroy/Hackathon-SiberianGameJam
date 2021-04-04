@@ -44,7 +44,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.8584906, g: 0.8369369, b: 0.63576895, a: 0.78431374}
-  m_Intensity: 8
+  m_Intensity: 25
   m_Range: 25
   m_SpotAngle: 45
   m_InnerSpotAngle: 15
@@ -119,10 +119,8 @@ GameObject:
   - component: {fileID: 9167442428937642483}
   - component: {fileID: 5390502859594336753}
   - component: {fileID: 6670406952442419897}
-  - component: {fileID: 628203354738685355}
-  - component: {fileID: 5858992717880858396}
-  - component: {fileID: 7366540348399294445}
-  - component: {fileID: 8835551195129122247}
+  - component: {fileID: 8004680806020942960}
+  - component: {fileID: 5712072663735264406}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -205,55 +203,20 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &628203354738685355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5893419285665063057}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dac5ddb3ce9b8884ca9588dc620ffcab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LookSensitivity: 1
-  WebglLookSensitivityMultiplier: 0.25
-  TriggerAxisThreshold: 0.4
-  InvertYAxis: 0
-  InvertXAxis: 0
---- !u!143 &5858992717880858396
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5893419285665063057}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!82 &7366540348399294445
+--- !u!82 &8004680806020942960
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5893419285665063057}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_audioClip: {fileID: 8300000, guid: ef59caecd1afc7445827ccd2e832a6e6, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -336,50 +299,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8835551195129122247
+--- !u!114 &5712072663735264406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5893419285665063057}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8e9b849ae2755b428b23edfa9686c79, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e779c8820ad57e40aff632b839a0003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 0}
-  AudioSource: {fileID: 0}
-  GravityDownForce: 20
-  GroundCheckLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  GroundCheckDistance: 1
-  MaxSpeedOnGround: 13
-  MovementSharpnessOnGround: 15
-  MaxSpeedCrouchedRatio: 0.5
-  MaxSpeedInAir: 10
-  AccelerationSpeedInAir: 25
-  SprintSpeedModifier: 1.5
-  KillHeight: -50
-  RotationSpeed: 200
-  AimingRotationMultiplier: 0.4
-  JumpForce: 9
-  CameraHeightRatio: 0.8
-  CapsuleHeightStanding: 1.8
-  CapsuleHeightCrouching: 0.9
-  CrouchingSharpness: 15
-  FootstepSfxFrequency: 0.3
-  FootstepSfxFrequencyWhileSprinting: 0.2
-  FootstepSfx: {fileID: 8300000, guid: f404f8d3c2a4b4f48989fb1120e78fb8, type: 3}
-  JumpSfx: {fileID: 8300000, guid: 13b59a14d34add64d84a623867546ff1, type: 3}
-  LandSfx: {fileID: 8300000, guid: d0f1afed8fa916244af6ca73579ded67, type: 3}
-  FallDamageSfx: {fileID: 8300000, guid: ef980d09b569380459e609fe90ef1db2, type: 3}
-  RecievesFallDamage: 1
-  MinSpeedForFallDamage: 20
-  MaxSpeedForFallDamage: 40
-  FallDamageAtMinSpeed: 10
-  FallDamageAtMaxSpeed: 30
 --- !u!1 &8366161958922169343
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8366161958922169343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1191522791737579581}
