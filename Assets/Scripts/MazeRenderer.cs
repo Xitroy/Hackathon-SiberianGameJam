@@ -62,7 +62,7 @@ public class MazeRenderer : MonoBehaviour
       {
         var cell = maze.GetRandomCell();
         var objT = Instantiate(obj, transform) as Transform;
-        var offset = new Vector3((float)rng.NextDouble(), (float)rng.NextDouble(), 0);
+        var offset = new Vector3((float)rng.NextDouble(), 2 + (float)rng.NextDouble(), 0);
         var sign = rng.Next(0, 2);
         if (0 == sign) objT.position = cell.Position + offset;
         else objT.position = cell.Position - offset;
