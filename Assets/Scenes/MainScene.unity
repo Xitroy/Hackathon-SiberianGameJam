@@ -260,6 +260,8 @@ MonoBehaviour:
   - {fileID: 1483509216304217008, guid: be6be0b19c7224d4cbec8bb57a4d7b9a, type: 3}
   - {fileID: 2005116116826305968, guid: 251c8624e01c15b468d2b8804159d173, type: 3}
   objDensity: 10
+  cluePrefab: {fileID: 7229410639672203974, guid: c911d20a4f9d89d4aa003b2e55a99ec1, type: 3}
+  clueDensity: 3
 --- !u!4 &557855749
 Transform:
   m_ObjectHideFlags: 0
